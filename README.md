@@ -46,14 +46,13 @@ Resulting directory tree will look like:
     └── jupyter/
         └── nbconvert/
             └── templates/
-                ├── add-show-code-button
+                ├── custom_template
                 │   ├── conf.json
                 │   └── index.html.j2
                 ├── classic
                 │   └── ...
                ... <other template subdirectories>
  ```
-- make "custom_exporter" package directory available to Python (ex. place it in PYTHONPATH)
    
 ### References:
 ["How to hide code from cells in ipython notebook visualized with nbviewer?"](https://stackoverflow.com/a/47017746)    
