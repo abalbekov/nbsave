@@ -2,3 +2,4 @@ __pycache__/
 .git/
 add_to_github.log
 *.egg-info
+*.bak
