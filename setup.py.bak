@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="nbsave",
-    version="1.1",
+    version="1",
     description='custom nbconvert templates and exporters to save a notebook as either execution evidence or as instructions',
     author='A.Balbekov',
     author_email='albert.y.balbekov@gmail.com',

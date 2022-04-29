@@ -77,8 +77,8 @@
 		}
     
 		$( document ).ready(function(){
-			// initially hide code and show output cells
-			code_shown=false;
+			// initially show code and show output cells
+			code_shown=true;
 			output_shown=true;
 			//$('div.input').hide();
 		});

@@ -1,0 +1,14 @@
+- v1.0.2 Feb 2022
+	- Catch paramiko ssh connection exceptions to print just exception name instead of full stack.
+	  This in particular covers wrong hostname and wrong ssh password.
+	
+- v1.0.1 Dec 2021
+	- added "cd /tmp" before sending script to pbrun, to avoid 
+		```
+		shell-init: error retrieving current directory: getcwd: cannot access parent directories: Permission denied
+		chdir: error retrieving current directory: getcwd: cannot access parent directories: Permission denied
+		```
+		from pbrun attempting to run script in connected user directory
+		
+- v1.0
+	- initial version
