@@ -7,7 +7,7 @@ import re
 # AddFilters is my custom exporter inherited from HTMLExporter
 from custom_exporter import AddFilters
     
-def save_as_instructions(nb_file, out_file, enumerate_headers=True):
+def save_as_instructions(nb_file, out_file, enumerate_headers=True, remove_output=True):
   
     # define custom preprocessor class
     class CustomPreprocessor(Preprocessor):
@@ -67,8 +67,9 @@ def save_as_instructions(nb_file, out_file, enumerate_headers=True):
     # add hide_cell removal preprocessor
     c.TagRemovePreprocessor.remove_cell_tags = ("hide_cell",)
     
-    # add output removal preprocessor
-    c.ClearOutputPreprocessor.enabled=True
+    if remove_output:
+        # add output removal preprocessor
+        c.ClearOutputPreprocessor.enabled=True
 
     # create exporter
     custom_exporter = AddFilters(config=c)
