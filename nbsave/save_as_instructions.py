@@ -7,7 +7,7 @@ import re
 # AddFilters is my custom exporter inherited from HTMLExporter
 from custom_exporter import AddFilters
     
-def save_as_instructions(nb_file, out_file):
+def save_as_instructions(nb_file, out_file, enumerate_headers=True):
   
     # define custom preprocessor class
     class CustomPreprocessor(Preprocessor):
@@ -48,9 +48,10 @@ def save_as_instructions(nb_file, out_file):
             if cell['cell_type']=='markdown':
                 cell['source']=AddFilters.markdown_embed_img(cell['source'])
             
-            # enumerate headers in markdown cells
-            if cell['cell_type']=='markdown':
-                cell['source']=AddFilters.number_headers(cell['source'])
+            if enumerate_headers:
+                # enumerate headers in markdown cells
+                if cell['cell_type']=='markdown':
+                    cell['source']=AddFilters.number_headers(cell['source'])
                        
             #fix HREF in TOC2 extension-generated Table Of Content HTML to align it with enumerated markdown headers 
             if cell['cell_type']=='markdown' and cell['metadata'].get('toc', False):
